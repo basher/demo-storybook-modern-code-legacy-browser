@@ -1,0 +1,33 @@
+/*
+----------------------------------------------------------------------------
+Dependencies.
+----------------------------------------------------------------------------
+*/
+@use '../mixins' as *;
+@use '../base' as *;
+
+.button {
+    @include button-reset;
+
+    &[class*='text'] {
+        border: $border-width-s solid;
+    }
+
+    // Apply colours to button variants.
+    &--primary {
+        background-color: $color-brand;
+        color: $color-neutral-100;
+
+        &[class*='text'] {
+            border-color: $color-brand;
+        }
+    }
+
+    &--secondary {
+        color: $color-brand;
+
+        &[class*='text'] {
+            border-color: $color-brand;
+        }
+    }
+}

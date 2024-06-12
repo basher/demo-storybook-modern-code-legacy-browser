@@ -1,0 +1,40 @@
+/*
+----------------------------------------------------------------------------
+Reset.
+----------------------------------------------------------------------------
+*/
+
+html {
+    // Remove the automatic text size adjustment that is provided by iOS.
+    text-size-adjust: none;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+* {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+html,
+body {
+    font-family: sans-serif;
+    min-block-size: 100vh;
+}
+
+button {
+    appearance: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: hsl(0 0% 0% / 0%);
+
+    > * {
+        pointer-events: none;
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "name": "demo-storybook-modern-css-js-legacy-browser",
+    "version": "1.0.0",
+    "description": "Demo Storybook using modern CSS/JS for legacy browsers",
+    "author": "basher",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/basher/demo-storybook-modern-css-js-legacy-browser"
+    },
+    "scripts": {
+        "reset": "rm -rf node_modules/ && npm install",
+        "static-assets-rename": "node ./scripts/static-assets-rename",
+        "static-assets-move": "node ./scripts/static-assets-move",
+        "prestart": "rm -rf .parcel-cache",
+        "start:parcel": "parcel watch src/javascript/index.js --dist-dir public --hmr-port 1234 --target app",
+        "start": "npm install && npm run start:parcel",
+        "prebuild": "rm -rf .parcel-cache && rm -rf build/ui/",
+        "build:parcel": "parcel build index.html --dist-dir build/ui",
+        "build": "npm install && npm run build:parcel",
+        "postbuild": "npm run static-assets-rename && npm run static-assets-move",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build",
+        "publish-storybook": "npm install && parcel build src/javascript/index.js --dist-dir public && npm run build-storybook"
+    },
+    "targets": {
+        "app": {}
+    },
+    "browserslist": [
+        "defaults",
+        "not dead",
+        "ie 10-11"
+    ],
+    "devDependencies": {
+        "@etchteam/storybook-addon-status": "^4.2.4",
+        "@parcel/transformer-sass": "^2.11.0",
+        "@storybook/addon-a11y": "^8.1.7",
+        "@storybook/addon-essentials": "^8.1.7",
+        "@storybook/html": "^8.1.7",
+        "@storybook/html-vite": "^8.1.7",
+        "cheerio": "^1.0.0-rc.11",
+        "fs-extra": "^10.1.0",
+        "parcel": "^2.11.0",
+        "postcss": "^8.4.18",
+        "storybook": "^8.1.7"
+    },
+    "dependencies": {
+        "dialog-polyfill": "^0.5.6"
+    }
+}

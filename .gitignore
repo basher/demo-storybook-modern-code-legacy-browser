@@ -1,0 +1,13 @@
+# UI
+node_modules
+build
+dist/*
+public/*
+*.map
+*.log
+
+# Parcel bundler
+.parcel-cache
+
+# Storybook
+storybook-static

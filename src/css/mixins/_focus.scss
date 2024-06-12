@@ -1,0 +1,47 @@
+/*
+----------------------------------------------------------------------------
+Adds :HOVER, :FOCUS and :ACTIVE styles.
+----------------------------------------------------------------------------
+*/
+
+/*
+----------------------------------------------------------------------------
+Dependencies.
+----------------------------------------------------------------------------
+*/
+@use '../base' as *;
+
+@mixin focus(
+    $opacity: false,
+    $transform: false
+) {
+    transition: background-color 150ms ease-in-out, box-shadow 150ms ease-in-out, opacity 250ms, transform 150ms;
+
+    &:hover {
+        @if $opacity {
+            opacity: 0.8;
+        }
+        cursor: pointer;
+        text-decoration: none;
+        /* stylelint-disable-next-line order/order */
+        @content;
+    }
+
+    &:active {
+        @if $transform {
+            transform: scale(0.975);
+        }
+        @content;
+    }
+
+    // See https://css-tricks.com/the-focus-visible-trick/
+    &:focus-visible {
+        box-shadow: 0 0 0 $border-width-l $color-focus;
+        outline: $border-width-l solid transparent; // So high contrast mode works.
+        @content;
+    }
+
+    &:focus:not(:focus-visible) {
+        outline: $border-width-l solid transparent;
+    }
+}
