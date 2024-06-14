@@ -54,7 +54,8 @@ Uses whatever build folder has been defined for the web application.
 - The JavaScript bundles contain non-transpiled `ES6+` code for modern browsers, and transpiled `ES5` code for legacy browsers. See [Parcel differential bundling](https://parceljs.org/features/targets/#differential-bundling).
 
 ### Polyfills
-- A separate `polyfills` bundle is created for browsers that don't support the required features in `src/javascript/config/browser-supports-features.js` (`dialog-polyfill` for demo purposes).
+- A separate `polyfills` bundle is created for browsers that don't support the required features in `src/javascript/config/browser-supports-features.js`.
+- For demo purposes, `dialog-polyfill` has been added.
 
 ### Sass
 - Sass compilation is done automatically.
