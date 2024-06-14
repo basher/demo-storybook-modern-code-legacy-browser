@@ -15,6 +15,7 @@ export const WebUIDisclosureHtml = (args) => `
     <div data-content>
         <p>Content to be shown/hidden.</p>
         <p>Use this component when <code>accordion</code> or <code>tabs</code> components cannot be used.</p>
+        <p>This component has been authored as an <code>HTML Web Component</code>, but it could just as easily be a plain <code>ES6 class</code>.</p>
     </div>
 </webui-disclosure>
 `;
