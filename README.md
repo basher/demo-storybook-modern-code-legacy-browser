@@ -90,3 +90,4 @@ Uses whatever build folder has been defined for the web application.
 - No TypeScript.
 - No Stylelint, Eslint, Prettier.
 - No Git commit hooks (Husky).
+- No PostCSS plugins for IE-specific fixes.

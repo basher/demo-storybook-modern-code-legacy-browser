@@ -2,6 +2,11 @@ import { ButtonHtml } from './Button';
 
 export default {
     title: 'Components/Button',
+    parameters: {
+        status: {
+            type: 'stable',
+        },
+    },
     argTypes: {
         label: { control: 'text' },
         buttonType: {
