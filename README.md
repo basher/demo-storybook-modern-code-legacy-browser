@@ -1,4 +1,7 @@
 # Demo Storybook with modern CSS/JS bundled for legacy browsers
+This is a simple repo to demo:
+- Modern tooling (Parcel) to bundle SCSS & ES6+ for both modern & legacy browsers.
+- Using Storybook to author UI components, leveraging the `autodocs` feature to generate documentation.
 
 ## Compile and watch for UI changes
 > - Use the correct Node version as listed in `.nvmrc`. If necessary, install Node Version Manager (NVM).
@@ -9,7 +12,7 @@ Run both the following commands in **separate terminal instances** in order to b
 - `npm run storybook` - Launches Storybook/HTML component library.
 
 ## Bundle CSS/JavaScript for production without watch
-- `npm run build` - See below for more details about Parcel's differential bundling.
+- `npm run build` - See the section further down for details of Parcel's differential bundling.
 
 ### Linking to compiled CSS/JavaScript
 There is a difference between `development` and `production` environments in terms of the locations of the compiled CSS/JavaScript.
@@ -26,11 +29,11 @@ Uses the Storybook dev server.
 #### PRODUCTION
 Uses whatever build folder has been defined for the web application.
 ```
-<link rel="stylesheet" href="/path/to/build/folder/app/css/index.css">
+<link rel="stylesheet" href="/path/to/build/folder/css/index.css">
 ```
 ```
-<script defer type="module" src="/path/to/build/folder/app/javascript/index.js"></script>
-<script defer nomodule src="/path/to/build/folder/app/javascript/legacy.js"></script>
+<script defer type="module" src="/path/to/build/folder/javascript/index.js"></script>
+<script defer nomodule src="/path/to/build/folder/javascript/legacy.js"></script>
 ```
 
 ## Supported browsers
@@ -41,13 +44,13 @@ Uses whatever build folder has been defined for the web application.
 ```
 "start:parcel": "parcel watch src/javascript/index.js --hmr-port 1234 --target app"
 ```
-- The command above starts the Parcel server, but it does not need to be run as `npm start` does it.
+- This command does not need to be explicitly run as `npm start` does it for you.
 - See the `HMR` section further down for an explanation of the `--hmr-port 1234` argument.
 - The `--target app` argument enables transpilation of both CSS and JavaScript in **local DEV mode**. By default, Parcel only does this for production builds.
 
 ### JavaScript transpilation and differential bundling
-- See [Parcel default Babel presets](https://parceljs.org/languages/javascript/#default-presets).
-- See [Parcel differential bundling](https://parceljs.org/features/targets/#differential-bundling).
+- There's no need for a `.babelrc` config. See [Parcel default Babel presets](https://parceljs.org/languages/javascript/#default-presets).
+- The JavaScript bundles contains non-transpiled `ES6+` code for modern browsers, and transpiled `ES5` code for legacy browsers. See [Parcel differential bundling](https://parceljs.org/features/targets/#differential-bundling).
 
 ### Polyfills
 - A separate `polyfills` bundle is created for browsers that don't support the required features in `src/javascript/config/browser-supports-features.js`.
