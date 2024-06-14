@@ -40,7 +40,6 @@ jobs:
 
       - name: Install and Build
         run: |
-          cd ui
           npm run publish-storybook
           cd ${{ github.workspace }}
 
