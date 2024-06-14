@@ -1,12 +1,12 @@
 {
     "name": "demo-storybook-modern-css-js-legacy-browser",
     "version": "1.0.0",
-    "description": "Demo Storybook using modern CSS/JS for legacy browsers",
+    "description": "Demo Storybook using modern code for legacy browsers",
     "author": "basher",
     "license": "ISC",
     "repository": {
         "type": "git",
-        "url": "https://github.com/basher/demo-storybook-modern-css-js-legacy-browser"
+        "url": "https://github.com/basher/demo-storybook-modern-code-legacy-browser"
     },
     "scripts": {
         "reset": "rm -rf node_modules/ && npm install",
