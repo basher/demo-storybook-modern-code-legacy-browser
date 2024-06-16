@@ -19,7 +19,6 @@ export default class Disclosure {
     }
 
     init() {
-        console.log('ttt')
         if (!this.trigger || !this.content) return;
 
         this.setupA11y();
