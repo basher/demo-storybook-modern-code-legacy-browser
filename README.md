@@ -30,7 +30,7 @@ Uses the Storybook dev server.
 ```
 
 #### PRODUCTION
-Uses whatever build folder has been defined for the web application.
+Uses whatever build folder has been defined for the website / web application.
 ```
 <link rel="stylesheet" href="/path/to/build/folder/css/index.css">
 ```
