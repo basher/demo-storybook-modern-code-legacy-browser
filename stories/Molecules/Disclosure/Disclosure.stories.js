@@ -26,4 +26,3 @@ export const Disclosure = {
     },
     render: (args) => DisclosureHtml(args),
 };
-Disclosure.storyName = "Disclosure (show/hide)";
