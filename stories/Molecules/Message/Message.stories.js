@@ -1,7 +1,7 @@
 import { MessageHtml } from './Message';
 
 export default {
-    title: 'Molecules/Message>',
+    title: 'Molecules/Message',
     parameters: {
         status: {
             type: 'stable',
