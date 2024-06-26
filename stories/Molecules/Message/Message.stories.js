@@ -8,7 +8,7 @@ export default {
         },
     },
     argTypes: {
-        notificationType: {
+        messageType: {
             control: 'select',
             options: ['info', 'error'],
         }
