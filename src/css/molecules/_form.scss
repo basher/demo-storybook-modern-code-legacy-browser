@@ -1,0 +1,20 @@
+/*
+----------------------------------------------------------------------------
+Dependencies.
+----------------------------------------------------------------------------
+*/
+@use '../mixins' as *;
+@use '../base' as *;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: $gutter;
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: $gutter-s;
+
+    }
+}

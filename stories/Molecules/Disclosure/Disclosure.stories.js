@@ -1,7 +1,7 @@
 import { DisclosureHtml } from "./Disclosure";
 
 export default {
-    title: "Components/Disclosure",
+    title: "Molecules/Disclosure",
     parameters: {
         status: {
             type: "stable",

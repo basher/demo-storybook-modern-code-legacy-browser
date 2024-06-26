@@ -1,0 +1,22 @@
+/*
+----------------------------------------------------------------------------
+Dependencies.
+----------------------------------------------------------------------------
+*/
+@use '../mixins' as *;
+@use '../base' as *;
+
+.message {
+    border: $border-width-s solid;
+    padding: $gutter;
+
+    &--info {
+        background: $color-info;
+        border-color: $color-info;
+    }
+
+    &--error {
+        background: $color-error;
+        border-color: $color-error;
+    }
+}

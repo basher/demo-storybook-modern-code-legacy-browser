@@ -1,7 +1,7 @@
 import { ButtonHtml } from './Button';
 
 export default {
-    title: 'Components/Button',
+    title: 'Atoms/Button',
     parameters: {
         status: {
             type: 'stable',
