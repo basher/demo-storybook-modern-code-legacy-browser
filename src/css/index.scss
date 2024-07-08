@@ -1,10 +1,20 @@
 /*
 ----------------------------------------------------------------------------
+NOTE:
+
+DO NOT EDIT 'index.scss' directly.
+
+Instead, make changes to '_index-template.scss', which will then be copied to 'index.scss' by Parcel bundler.
+----------------------------------------------------------------------------
+*/
+
+/*
+----------------------------------------------------------------------------
 THEME import goes before Sass variable declarations.
 See https://robots.thoughtbot.com/sass-default
 ----------------------------------------------------------------------------
 */
-@use '_THEMES/whitelabel/' as *;
+@use '_THEMES/theme1/' as *;
 
 /*
 ----------------------------------------------------------------------------

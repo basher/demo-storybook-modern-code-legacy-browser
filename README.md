@@ -11,7 +11,7 @@ This is a simple repo to demo:
 
 Run both the following commands in **separate terminal instances** in order to be able to compile CSS/JavaScript and test the UI in Storybook.
 
-- `npm start` - Installs Node modules (if not already installed) and launches Parcel bundler.
+- `npm run start:theme --ui:theme=[theme-name]` - Installs Node modules (if not already installed) and launches Parcel bundler with correct UI theme.
 - `npm run storybook` - Launches Storybook/HTML component library.
 
 ## Bundle CSS/JavaScript for production without watch

@@ -1,5 +1,5 @@
 {
-    "name": "demo-storybook-modern-css-js-legacy-browser",
+    "name": "demo-ui",
     "version": "1.0.0",
     "description": "Demo Storybook using modern code for legacy browsers",
     "author": "basher",
@@ -10,10 +10,12 @@
     },
     "scripts": {
         "reset": "rm -rf node_modules/ && npm install",
+        "ui-theme": "node ./scripts/ui-theme",
         "static-assets-rename": "node ./scripts/static-assets-rename",
         "static-assets-move": "node ./scripts/static-assets-move",
         "prestart": "rm -rf .parcel-cache",
         "start:parcel": "parcel watch src/javascript/index.js --dist-dir public --hmr-port 1234 --target app",
+        "start:theme": "set NODE_ENV=DEV && npm run ui-theme %npm_config_theme% && npm start",
         "start": "npm install && npm run start:parcel",
         "prebuild": "rm -rf .parcel-cache && rm -rf build/ui/",
         "build:parcel": "parcel build index.html --dist-dir build/ui",
@@ -39,6 +41,7 @@
         "@storybook/html": "^8.1.7",
         "@storybook/html-vite": "^8.1.7",
         "cheerio": "^1.0.0-rc.11",
+        "colors": "^1.4.0",
         "fs-extra": "^10.1.0",
         "parcel": "^2.11.0",
         "postcss": "^8.4.18",

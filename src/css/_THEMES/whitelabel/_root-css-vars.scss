@@ -23,10 +23,3 @@ CSS variables for dynamic theming.
     --themeBorderWidthM: 0.125rem;
     --themeBorderWidthL: 0.25rem;
 }
-
-// Dark theme: ensure black & white are NOT truly black & white.
-@media (prefers-color-scheme: dark) {
-    :root {
-        --themeColorBrand: ;
-    }
-}
