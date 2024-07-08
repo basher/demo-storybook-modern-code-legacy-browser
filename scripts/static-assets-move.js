@@ -1,14 +1,20 @@
 /**
  * Move files bundled by Parcel that are renamed by "static-assets-rename" script.
  *
+ * Allows us to pass a "theme" argument.
+ * If an invalid or null theme is passed, default "whitelabel" will be used.
+ *
+ * @param {string} %npm_config_theme% - UI theme name.
+ *
  * @return {void}
  */
 
 const fs = require('fs-extra');
 const path = require('path');
+const themes = require('./theme-config');
 
 const theme = process.argv[2]; // Only passing 1 arg in Node cmd = theme name
-const prodDirectoryPath = path.join(__dirname, `../build/ui`);
+const prodDirectoryPath = path.join(__dirname, `../public/build/ui`);
 
 // 1. Read the renamed files in PRODUCTION folder.
 const readProdDirectory = () => {
@@ -44,17 +50,19 @@ const readProdDirectory = () => {
 
 // 2. Move file.
 const moveFile = (file, fileType) => {
-    let subFolder;
+    // Default to "whitelabel" if invalid theme is supplied.
+    let subFolder = themes[theme] || 'whitelabel';
+
     if (fileType === 'js') {
         // Ignore unwanted "runtime" JS files.
         if (fileType === 'js' && file.indexOf('runtime') > -1) {
             return;
         }
 
-        subFolder = `${theme}/javascript`;
+        subFolder = `${subFolder}/javascript`;
     }
     if (fileType === 'css') {
-        subFolder = `${theme}/css`;
+        subFolder = `${subFolder}/css`;
     }
 
     fs.move(

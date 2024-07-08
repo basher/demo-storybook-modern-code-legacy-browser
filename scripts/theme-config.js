@@ -4,6 +4,6 @@
 
 /* eslint-disable */
 var themes = (module.exports = {
-    whitelabel: 'Default theme',
-    theme1: 'Theme1'
+    whitelabel: 'whitelabel',
+    theme1: 'theme1'
 });

@@ -1,7 +1,5 @@
 # UI
 node_modules
-build
-dist/*
 public/*
 *.map
 *.log

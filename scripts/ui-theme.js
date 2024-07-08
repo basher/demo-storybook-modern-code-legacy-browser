@@ -1,9 +1,10 @@
 /**
  * Function for Sass compilation.
+ *
  * Allows us to pass a "theme" argument that replaces the "{{ theme }}" token in "index.scss" with correct client Sass theme override.
  * If an invalid or null theme is passed, default "whitelabel" will be used.
  *
- * @param {string} %npm_package_config_theme% - UI theme name.
+ * @param {string} %npm_config_theme% - UI theme name.
  *
  * @return {void}
  */

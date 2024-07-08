@@ -17,14 +17,14 @@
         "start:parcel": "parcel watch src/javascript/index.js --dist-dir public --hmr-port 1234 --target app",
         "start:theme": "set NODE_ENV=DEV && npm run ui-theme %npm_config_theme% && npm start",
         "start": "npm install && npm run start:parcel",
-        "prebuild": "rm -rf .parcel-cache && rm -rf build/ui/",
-        "build:parcel": "parcel build index.html --dist-dir build/ui",
+        "prebuild": "rm -rf .parcel-cache && rm -rf public/build/ui/%npm_config_theme%",
+        "build:parcel": "parcel build index.html --dist-dir public/build/ui",
         "build:theme": "set NODE_ENV=PROD && npm run ui-theme %npm_config_theme% && npm run build",
         "build": "npm install && npm run build:parcel",
-        "postbuild": "npm run static-assets-rename && npm run static-assets-move %npm_config_theme%",
+        "postbuild": "npm run static-assets-rename && npm run static-assets-move %npm_config_theme% && rm -rf public/build/ui/index.runtime.*",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
-        "publish-storybook": "npm install && parcel build src/javascript/index.js --dist-dir public && npm run build-storybook"
+        "publish-storybook": "npm install && npm run ui-theme whitelabel && parcel build src/javascript/index.js --dist-dir public && npm run build-storybook"
     },
     "targets": {
         "app": {}

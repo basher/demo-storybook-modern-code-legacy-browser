@@ -19,7 +19,7 @@ Run both the following commands in **separate terminal instances** in order to b
 - To change the theme in `DEV MODE`, stop the Parcel Node process with `CTRL+C`, and `npm run start:theme --theme=[theme-name]`.
 
 ## Bundle CSS/JavaScript for production without watch
-- `npm run build` - See the section further down for details of Parcel's differential bundling.
+- `npm run build:theme --theme=[theme-name]` - See the section further down for details of Parcel's differential bundling.
 
 ### Linking to compiled CSS/JavaScript
 There is a difference between `development` and `production` environments in terms of the locations of the compiled CSS/JavaScript.
@@ -35,6 +35,7 @@ Uses the Storybook dev server.
 
 #### PRODUCTION
 Uses whatever build folder has been defined for the website / web application.
+
 ```
 <link rel="stylesheet" href="/path/to/build/folder/css/index.css">
 ```
@@ -87,7 +88,7 @@ Uses whatever build folder has been defined for the website / web application.
 
 
 ## Build and publish Storybook
-- `npm run publish-storybook` - this runs a Parcel build to bundle CSS/JavaScript in the `public` folder, as defined in `.storybook/main.js`.
+- `npm run publish-storybook` - this runs a Parcel build to bundle CSS/JavaScript in the `public` folder, using the default `whitelabel` theme.
 - `npx http-server ./storybook-static` - to test production build on local server.
 
 ## Additional required files in project root directory
