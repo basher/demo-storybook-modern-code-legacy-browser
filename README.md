@@ -45,7 +45,7 @@ Uses whatever build folder has been defined for the website / web application.
 ```
 
 ## Supported browsers
-- The [default browserslist configuration](https://github.com/browserslist/browserslist#best-practices) has been extended in `package.json` to support IE10-11.
+- The [default browserslist configuration](https://github.com/browserslist/browserslist#best-practices) has been extended in `package.json` to support IE11.
 - Run `npx browserslist` to see a list of supported browsers.
 
 ## Parcel bundler
