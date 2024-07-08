@@ -1,0 +1,32 @@
+/*
+----------------------------------------------------------------------------
+CSS variables for dynamic theming.
+
+- Legacy browsers can only leverage CSS variables if they are defined inside ':root' element.
+----------------------------------------------------------------------------
+*/
+
+:root {
+    // Colors.
+    --themeColorBrand: saddlebrown;
+    --themeColorNeutral100: lightgrey;
+    --themeColorFocus: gold;
+    --themeColorInfo: lightskyblue;
+    --themeColorError: lightcoral;
+
+    // Spacing/gutters.
+    --themeGutterS: 0.5rem;
+    --themeGutter: 1rem;
+
+    // Borders.
+    --themeBorderWidthS: 0.0625rem;
+    --themeBorderWidthM: 0.125rem;
+    --themeBorderWidthL: 0.25rem;
+}
+
+// Dark theme: ensure black & white are NOT truly black & white.
+@media (prefers-color-scheme: dark) {
+    :root {
+        --themeColorBrand: ;
+    }
+}

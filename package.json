@@ -29,7 +29,7 @@
     "browserslist": [
         "defaults",
         "not dead",
-        "ie 10-11"
+        "ie 11"
     ],
     "devDependencies": {
         "@etchteam/storybook-addon-status": "^4.2.4",
