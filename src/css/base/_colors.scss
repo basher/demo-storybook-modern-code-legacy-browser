@@ -4,9 +4,9 @@ Color settings.
 ----------------------------------------------------------------------------
 */
 
-$color-brand: rebeccapurple !default;
-$color-neutral-100: lightgrey !default;
-$color-focus: gold !default;
+$color-brand: var(--themeColorBrand) !default;
+$color-neutral-100: var(--themeColorNeutral100) !default;
+$color-focus: var(--themeColorFocus) !default;
 
-$color-info: lightskyblue !default;
-$color-error: lightcoral !default;
+$color-info: var(--themeColorInfo) !default;
+$color-error: var(--themeColorError) !default;

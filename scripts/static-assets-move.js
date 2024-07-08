@@ -47,7 +47,7 @@ const moveFile = (file, type) => {
         subFolder = 'javascript';
     }
     if (type === 'css') {
-        subFolder = 'stylesheets';
+        subFolder = 'css';
     }
 
     fs.move(

@@ -1,5 +1,13 @@
 /*
 ----------------------------------------------------------------------------
+THEME import goes before Sass variable declarations.
+See https://robots.thoughtbot.com/sass-default
+----------------------------------------------------------------------------
+*/
+@use '_THEMES/whitelabel/' as *;
+
+/*
+----------------------------------------------------------------------------
 Base scaffold, containing all !default Sass variables.
 ----------------------------------------------------------------------------
 */
@@ -7,7 +15,7 @@ Base scaffold, containing all !default Sass variables.
 
 /*
 ----------------------------------------------------------------------------
-Globals (including reset).
+Globals (including CSS reset).
 ----------------------------------------------------------------------------
 */
 @use 'global' as *;

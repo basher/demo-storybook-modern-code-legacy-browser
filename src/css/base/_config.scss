@@ -10,14 +10,14 @@ Spacing and gutters.
 Use for margin|padding, and gap in flex|grid layouts.
 ----------------------------------------------------------------------------
 */
-$gutter-s: 0.5rem !default;
-$gutter: 1rem !default;
+$gutter-s: var(--themeGutterS) !default;
+$gutter: var(--themeGutter) !default;
 
 /*
 ----------------------------------------------------------------------------
 Borders.
 ----------------------------------------------------------------------------
 */
-$border-width-s: 0.0625rem !default;
-$border-width-m: 0.125rem !default;
-$border-width-l: 0.25rem !default;
+$border-width-s: var(--themeBorderWidthS) !default;
+$border-width-m: var(--themeBorderWidthM) !default;
+$border-width-l: var(--themeBorderWidthL) !default;
