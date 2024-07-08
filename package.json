@@ -19,8 +19,9 @@
         "start": "npm install && npm run start:parcel",
         "prebuild": "rm -rf .parcel-cache && rm -rf build/ui/",
         "build:parcel": "parcel build index.html --dist-dir build/ui",
+        "build:theme": "set NODE_ENV=PROD && npm run ui-theme %npm_config_theme% && npm run build",
         "build": "npm install && npm run build:parcel",
-        "postbuild": "npm run static-assets-rename && npm run static-assets-move",
+        "postbuild": "npm run static-assets-rename && npm run static-assets-move %npm_config_theme%",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
         "publish-storybook": "npm install && parcel build src/javascript/index.js --dist-dir public && npm run build-storybook"

@@ -6,7 +6,9 @@
 
 const fs = require('fs-extra');
 const path = require('path');
-const prodDirectoryPath = path.join(__dirname, '../build/ui');
+
+const theme = process.argv[2]; // Only passing 1 arg in Node cmd = theme name
+const prodDirectoryPath = path.join(__dirname, `../build/ui`);
 
 // 1. Read the renamed files in PRODUCTION folder.
 const readProdDirectory = () => {
@@ -40,14 +42,19 @@ const readProdDirectory = () => {
     });
 };
 
-// 1. Move file.
-const moveFile = (file, type) => {
+// 2. Move file.
+const moveFile = (file, fileType) => {
     let subFolder;
-    if (type === 'js') {
-        subFolder = 'javascript';
+    if (fileType === 'js') {
+        // Ignore unwanted "runtime" JS files.
+        if (fileType === 'js' && file.indexOf('runtime') > -1) {
+            return;
+        }
+
+        subFolder = `${theme}/javascript`;
     }
-    if (type === 'css') {
-        subFolder = 'css';
+    if (fileType === 'css') {
+        subFolder = `${theme}/css`;
     }
 
     fs.move(
@@ -56,8 +63,9 @@ const moveFile = (file, type) => {
         (err) => {
             if (err) {
                 return console.log(err);
+            } else {
+                console.log(`Successfully moved ${file}`);
             }
-            console.log(`Successfully moved ${file}`);
         },
     );
 };
