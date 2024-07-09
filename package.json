@@ -13,7 +13,7 @@
         "ui-theme": "node ./scripts/ui-theme",
         "static-assets-rename": "node ./scripts/static-assets-rename",
         "static-assets-move": "node ./scripts/static-assets-move",
-        "bundle-all-themes": "node ./scripts/bundle-all-themes",
+        "bundle-themes": "npm run build:theme --theme=whitelabel && npm run build:theme --theme=theme1",
         "prestart": "rm -rf .parcel-cache",
         "start:parcel": "parcel watch src/javascript/index.js --dist-dir public --hmr-port 1234 --target app",
         "start:theme": "set NODE_ENV=DEV && npm run ui-theme %npm_config_theme% && npm start",
@@ -25,7 +25,7 @@
         "postbuild": "npm run static-assets-rename && npm run static-assets-move %npm_config_theme% && rm -rf public/build/ui/index.runtime.*",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
-        "publish-storybook": "npm install && npm run ui-theme whitelabel && parcel build src/javascript/index.js --dist-dir public && npm run bundle-all-themes && npm run build-storybook"
+        "publish-storybook": "npm install && npm run bundle-themes && npm run build-storybook"
     },
     "targets": {
         "app": {}

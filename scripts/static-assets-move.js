@@ -27,6 +27,12 @@ const readProdDirectory = () => {
         files.forEach((file) => {
             let fileType;
 
+            // Ignore folders (i.e. other themes).
+            if (file.indexOf('.') < 0) {
+                return;
+            }
+
+            // Ignore HTML file used for Parcel build.
             if (file.indexOf('html') >= 0) {
                 return;
             }
@@ -52,23 +58,26 @@ const readProdDirectory = () => {
 // 2. Move file.
 const moveFile = (file, fileType) => {
     // Default to "whitelabel" if invalid theme is supplied.
-    let subFolder = themes[theme] || 'whitelabel';
+    let themeName = themes[theme] !== undefined
+        ? theme
+        : 'whitelabel';
+    let themeFolder = `${prodDirectoryPath}/${themeName}`;
 
     if (fileType === 'js') {
         // Ignore unwanted "runtime" JS files.
         if (fileType === 'js' && file.indexOf('runtime') > -1) {
             return;
         }
-
-        subFolder = `${subFolder}/javascript`;
+        themeFolder = `${themeFolder}/javascript`;
     }
+
     if (fileType === 'css') {
-        subFolder = `${subFolder}/css`;
+        themeFolder = `${themeFolder}/css`;
     }
 
     fs.move(
         `${prodDirectoryPath}/${file}`,
-        `${prodDirectoryPath}/${subFolder}/${file}`,
+        `${themeFolder}/${file}`,
         (err) => {
             if (err) {
                 return console.log(colors.red.bold('static-assets-move:', err));
