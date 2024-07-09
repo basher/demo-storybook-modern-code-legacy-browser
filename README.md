@@ -88,7 +88,7 @@ Uses whatever build folder has been defined for the website / web application.
 
 
 ## Build and publish Storybook
-- `npm run publish-storybook` - this runs a Parcel build to bundle CSS/JavaScript in the `storybook-static` folder, using the default `whitelabel` theme.
+- `npm run publish-storybook` - Runs Parcel build (using the default `whitelabel` theme) to bundle CSS/JavaScript in the `public` folder, which then gets copied to `storybook-static` folder. This script also gets run in the Github pages workflow (`.github/static.yml`) to publish Storybook online.
 - `npx http-server ./storybook-static` - to test production build on local server.
 
 ## Additional required files in project root directory
