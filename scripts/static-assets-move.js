@@ -11,6 +11,7 @@
 
 const fs = require('fs-extra');
 const path = require('path');
+const colors = require('colors/safe');
 const themes = require('./theme-config');
 
 const theme = process.argv[2]; // Only passing 1 arg in Node cmd = theme name
@@ -20,7 +21,7 @@ const prodDirectoryPath = path.join(__dirname, `../public/build/ui`);
 const readProdDirectory = () => {
     fs.readdir(prodDirectoryPath, (err, files) => {
         if (err) {
-            return console.log(err);
+            return console.log(colors.red.bold('static-assets-move:', err));
         }
 
         files.forEach((file) => {
@@ -70,7 +71,7 @@ const moveFile = (file, fileType) => {
         `${prodDirectoryPath}/${subFolder}/${file}`,
         (err) => {
             if (err) {
-                return console.log(err);
+                return console.log(colors.red.bold('static-assets-move:', err));
             } else {
                 console.log(`Successfully moved ${file}`);
             }
