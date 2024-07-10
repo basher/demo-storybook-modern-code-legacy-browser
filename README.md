@@ -1,7 +1,5 @@
 # Demo Storybook with modern CSS/JS bundled for legacy browsers
 
-[[_TOC_]]
-
 This repo uses:
 - Modern tooling (Parcel) to bundle SCSS & ES6+ for both modern & legacy browsers.
 - Storybook/HTML to author UI components, leveraging the `autodocs` feature to auto-generate documentation.
