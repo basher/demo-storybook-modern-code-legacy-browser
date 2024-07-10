@@ -19,7 +19,9 @@ Dependencies.
     color: inherit;
     cursor: pointer;
     display: inline-block;
-    padding: $gutter;
+    padding-block: $gutter;
+    padding-inline-end: $gutter; // To test PostCSS logical
+    padding-inline-start: $gutter; // To test PostCSS logical
     text-decoration: none;
 
     &:disabled {
