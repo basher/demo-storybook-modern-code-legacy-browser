@@ -16,7 +16,7 @@ export default {
 const style = `
 <style>
     /* Hides the 1st empty auto-generated output from 'exported-colors.json'. */
-    .stack h2:first-of-type,
+    div h2:first-of-type,
     .grid:first-of-type {
         display: none;
     }
@@ -46,13 +46,17 @@ const style = `
 
 export const Colours = (args, { loaded }) => `
 ${style}
-<div class="stack">
+<div>
+<p style="margin-block-end: 1rem; padding: 1rem; background: lightgoldenrodyellow;">
+<b>NOTE:</b>
+Default theme <code>$color-brand</code> in will be updated in "<code>theme1</code>".
+</p>
 ${
     // Build story HTML from 'exported-colors.json'.
     Object.keys(loaded)
         .map(
             (section) => `
-                <h2 class="h--3">
+                <h2>
                     ${
                         section.charAt(0).toUpperCase() +
                         section.slice(1).replace(/-/g, ' ')

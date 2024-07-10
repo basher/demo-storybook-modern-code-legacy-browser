@@ -14,6 +14,11 @@ CSS variables for dynamic theming.
     --themeColorInfo: lightskyblue;
     --themeColorError: lightcoral;
 
+    // Typography.
+    --type-font-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --type-font-family: Arial;
+
     // Spacing/gutters.
     --themeGutterS: 0.5rem;
     --themeGutter: 1rem;
