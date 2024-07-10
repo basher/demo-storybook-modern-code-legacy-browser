@@ -1,12 +1,25 @@
 /*
 ----------------------------------------------------------------------------
 Color settings.
+
+1. Use JSDoc comments to identify all the color 'sections'.
+2. The 'sass-export' Node package can then correctly sub-divide all the colors into appropriate groups for Storybook.
 ----------------------------------------------------------------------------
 */
 
+/**
+ * @sass-export-section="main theme colours"
+ */
 $color-brand: var(--themeColorBrand) !default;
-$color-neutral-100: var(--themeColorNeutral100) !default;
-$color-focus: var(--themeColorFocus) !default;
 
+/**
+* @sass-export-section="neutral colours"
+*/
+$color-neutral-100: var(--themeColorNeutral100) !default;
+
+/**
+* @sass-export-section="other accent colours"
+*/
+$color-focus: var(--themeColorFocus) !default;
 $color-info: var(--themeColorInfo) !default;
 $color-error: var(--themeColorError) !default;

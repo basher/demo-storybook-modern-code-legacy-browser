@@ -14,10 +14,11 @@
         "static-assets-rename": "node ./scripts/static-assets-rename",
         "static-assets-move": "node ./scripts/static-assets-move",
         "bundle-all-themes": "node ./scripts/bundle-all-themes",
+        "sass-export-colors": "sass-export src/css/base/_colors.scss -o public/exported-colors.json",
         "prestart": "rm -rf .parcel-cache",
         "start:parcel": "parcel watch src/javascript/index.js --dist-dir public --hmr-port 1234 --target app",
         "start:theme": "cross-env NODE_ENV=development && npm run ui-theme %npm_config_theme% && npm start",
-        "start": "npm install && npm run start:parcel",
+        "start": "npm install && npm run sass-export-colors && npm run start:parcel",
         "prebuild": "rm -rf public/build/ui/%npm_config_theme%",
         "build:parcel": "parcel build index.html --dist-dir public/build/ui",
         "build:theme": "cross-env NODE_ENV=production && npm run ui-theme %npm_config_theme% && npm run build",
@@ -25,7 +26,7 @@
         "postbuild": "npm run static-assets-rename && npm run static-assets-move %npm_config_theme% && rm -rf public/build/ui/index.runtime.*",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
-        "publish-storybook": "npm install && npm run bundle-all-themes && npm run build-storybook"
+        "publish-storybook": "npm install && npm run sass-export-colors && npm run bundle-all-themes && npm run build-storybook"
     },
     "targets": {
         "app": {}
@@ -50,6 +51,7 @@
         "postcss": "^8.4.18",
         "postcss-dir-pseudo-class": "^8.0.1",
         "postcss-logical": "^7.0.1",
+        "sass-export": "^2.1.2",
         "storybook": "^8.1.7"
     },
     "dependencies": {
