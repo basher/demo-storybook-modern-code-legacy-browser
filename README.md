@@ -16,7 +16,8 @@ Run both the following commands in **separate terminal instances** in order to b
 - `npm run storybook` - Launches Storybook/HTML component library.
 
 ### UI themes
-- Valid UI themes are located in `scripts/theme-config.js`.
+- Theme-specific CSS is located in `src/css/_THEMES` folder.
+- Valid UI theme names are located in `scripts/theme-config.js`.
 - To change the theme in `DEV MODE`, stop the Parcel Node process with `CTRL+C`, and `npm run start:theme --theme=[theme-name]`. The new theme will work in Storybook.
 
 > - NOTE: There is currently no way to change themes within the Storybook interface itself (i.e. in `PROD MODE`). Multiple addons have been tried, but none work with Storybook/HTML v8 with Vite builder.
