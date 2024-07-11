@@ -20,7 +20,8 @@ Run both the following commands in **separate terminal instances** in order to b
 - Valid UI theme names are located in `scripts/theme-config.js`.
 - To change the theme in `DEV MODE`, stop the Parcel Node process with `CTRL+C`, and `npm run start:theme --theme=[theme-name]`. The new theme will work in Storybook.
 
-> - NOTE: There is currently no way to change themes within the Storybook interface itself (i.e. in `PROD MODE`). Multiple addons have been tried, but none work with Storybook/HTML v8 with Vite builder.
+> - NOTE: There is currently no way to change themes within the Storybook interface itself (i.e. in `PROD MODE`).
+> - After trying many addons, this one looks to be the best fit, but is currently [out of date with latest Storybook version](https://github.com/krzysztof01-sz/storybook-theme-switch-addon/pull/1#issuecomment-2222568910).
 
 ## Bundle CSS/JS for production without watch
 - `npm run build:theme --theme=[theme-name]` - See the section further down for details of Parcel's differential bundling.
