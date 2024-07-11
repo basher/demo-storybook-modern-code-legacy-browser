@@ -1,4 +1,4 @@
-// Import Sass entry file (whitelabel).
+// Import Sass entry file ('default' theme).
 import '../../src/css/index.scss';
 
 // Import config and UI module initialisation.

@@ -2,7 +2,7 @@
  * Move files bundled by Parcel that are renamed by "static-assets-rename" script.
  *
  * Allows us to pass a "theme" argument.
- * If an invalid or null theme is passed, default "whitelabel" will be used.
+ * If an invalid or null theme is passed, "default" will be used.
  *
  * @param {string} %npm_config_theme% - UI theme name.
  *
@@ -57,10 +57,10 @@ const readProdDirectory = () => {
 
 // 2. Move file.
 const moveFile = (file, fileType) => {
-    // Default to "whitelabel" if invalid theme is supplied.
+    // Use "default" if invalid theme is supplied.
     let themeName = themes[theme] !== undefined
         ? theme
-        : 'whitelabel';
+        : 'default';
     let themeFolder = `${prodDirectoryPath}/${themeName}`;
 
     if (fileType === 'js') {

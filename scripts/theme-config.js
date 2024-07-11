@@ -3,6 +3,6 @@
 */
 
 var themes = (module.exports = {
-    whitelabel: 'whitelabel',
-    theme1: 'theme1'
+    default: 'Default theme',
+    theme1: 'Theme1'
 });

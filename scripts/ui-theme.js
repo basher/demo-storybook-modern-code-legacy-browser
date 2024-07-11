@@ -2,7 +2,7 @@
  * Theme-specific Sass compilation.
  *
  * Allows us to pass a "theme" argument that replaces the "{{ theme }}" token in "index.scss" with correct client Sass theme override.
- * If an invalid or null theme is passed, default "whitelabel" will be used.
+ * If an invalid or null theme is passed, "default" will be used.
  *
  * @param {string} %npm_config_theme% - UI theme name.
  *
@@ -42,10 +42,10 @@ const updateFromSassTemplate = (data, whichTheme) =>
             if (whichTheme === undefined) {
                 console.log(
                     colors.red.bold(
-                        `Invalid or null theme - using default "whitelabel" theme...`
+                        `Invalid or null theme - using "default" theme...`
                     )
                 );
-                theme = 'whitelabel';
+                theme = 'default';
             }
 
             // Update Sass @imports in 'index.scss' with correct theme filepath

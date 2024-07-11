@@ -12,7 +12,7 @@ This repo uses:
 
 Run both the following commands in **separate terminal instances** in order to be able to compile CSS/JS and test the UI in Storybook.
 
-- `npm run start:theme --theme=[theme-name]` - Installs Node modules (if not already installed) and launches Parcel bundler with correct UI theme.
+- `npm run start:theme --theme=[theme-name]` - Installs Node modules (if not already installed) and launches Parcel bundler with correct UI theme (e.g. `default`).
 - `npm run storybook` - Launches Storybook/HTML component library.
 
 ### UI themes
@@ -45,8 +45,8 @@ STORYBOOK_JS_PATH=index.js
 - Uses whatever build folder has been defined for the website / web application in `.env.production`:
 
 ```
-STORYBOOK_CSS_PATH=build/ui/whitelabel/css/index.css
-STORYBOOK_JS_PATH=build/ui/whitelabel/javascript/index.js
+STORYBOOK_CSS_PATH=build/ui/default/css/index.css
+STORYBOOK_JS_PATH=build/ui/default/javascript/index.js
 ```
 
 ## Supported browsers
@@ -93,7 +93,7 @@ STORYBOOK_JS_PATH=build/ui/whitelabel/javascript/index.js
 
 
 ## Build and publish Storybook
-- `npm run publish-storybook` - Runs Parcel build (using the default `whitelabel` theme) to bundle CSS/JS in the `public` folder, which then gets copied to `storybook-static` folder.
+- `npm run publish-storybook` - Runs Parcel build (using the `default` theme) to bundle CSS/JS in the `public` folder, which then gets copied to `storybook-static` folder.
 - This script also gets run in the Github pages workflow (`.github/static.yml`) to publish Storybook online.
 - `npx http-server ./storybook-static` - Test Storybook production build on local server.
 
