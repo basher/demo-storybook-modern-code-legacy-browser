@@ -1,0 +1,8 @@
+.button {
+    text-transform: uppercase;
+
+    // Boost specificity.
+    &[class*='--primary'] {
+        color: white;
+    }
+}
