@@ -14,7 +14,7 @@ THEME import goes before Sass variable declarations.
 See https://robots.thoughtbot.com/sass-default
 ----------------------------------------------------------------------------
 */
-@use '_THEMES/theme1/' as *;
+@use '_THEMES/default/' as *;
 
 /*
 ----------------------------------------------------------------------------
