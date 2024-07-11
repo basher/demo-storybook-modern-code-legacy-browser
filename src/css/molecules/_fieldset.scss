@@ -10,4 +10,8 @@ Dependencies.
     display: flex;
     flex-direction: column;
     gap: $gutter-s;
+
+    legend {
+        margin-block-end: $gutter-s;
+    }
 }
