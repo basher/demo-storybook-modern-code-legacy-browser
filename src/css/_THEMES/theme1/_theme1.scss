@@ -2,19 +2,11 @@
 ----------------------------------------------------------------------------
 THEME overrides...
 
-1. Override base styles from "./src/css/base/" folder.
-2. Override global styles from "./src/css/globals/" folder, by @using the appropriate Sass partial(s).
-3. Override atoms/molecules/organisms/templates styles from "./src/css/.../" folders, by @using the appropriate Sass partial(s).
+Override "./src/css/base/" folder styles.
 
 NOTES:
-1. If you need to reference a base variable from "./src/css/base/" folder, WITHOUT CHANGING ITS VALUE, you will need to DECLARE IT AGAIN in this file, otherwise it will be undefined.
+If you need to reference a base variable from "./src/css/base/" folder, WITHOUT CHANGING ITS VALUE, you will need to DECLARE IT AGAIN in this file, otherwise it will be undefined.
 ----------------------------------------------------------------------------
 */
 
-// 1.
-@use 'base' as *;
-
-// 2.
-
-// 3.
-@use 'atoms' as *;
+@use 'overrides/base' as *;
