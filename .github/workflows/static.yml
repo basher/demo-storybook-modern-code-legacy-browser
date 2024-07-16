@@ -5,11 +5,11 @@ on:
     branches: [ 'master' ]
     # Trigger the action only when files change in the folders defined here.
     paths: [
-      'stories/**',
-      'src/**',
-      'public/**',
       '.storybook/**',
-      'scripts/**'
+      'scripts/**',
+      'src/**',
+      'stories/**',
+      'public/**'
     ]
   # Allows workflow to be run manually from the Actions tab on GitHub.
   workflow_dispatch:
