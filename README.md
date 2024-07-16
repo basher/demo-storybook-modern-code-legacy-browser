@@ -12,16 +12,14 @@ This repo uses:
 
 Run both the following commands in **separate terminal instances** in order to be able to compile CSS/JS and test the UI in Storybook.
 
-- `npm run start:theme --theme=[theme-name]` - Installs Node modules (if not already installed) and launches Parcel bundler with correct UI theme (e.g. `default`).
-- `npm run storybook` - Launches Storybook/HTML component library.
+1. `npm start` - Installs Node modules (if not already installed) and launches Parcel bundler with default UI theme (i.e. equivalent to `npm run start:theme --theme=default`).
+2. `npm run storybook` - Launches Storybook/HTML component library.
 
 ### UI themes
 - Theme-specific CSS is located in `src/css/_THEMES` folder.
 - Valid UI theme names are located in `scripts/theme-config.js`.
 - To change the theme in `DEV MODE`, stop the Parcel Node process with `CTRL+C`, and `npm run start:theme --theme=[theme-name]`. The new theme will work in Storybook.
-
-> - NOTE: There is currently no way to change themes within the Storybook interface itself (i.e. in `PROD MODE`).
-> - After trying many addons, this one looks to be the best fit, but is currently [out of date with latest Storybook version](https://github.com/krzysztof01-sz/storybook-theme-switch-addon/pull/1#issuecomment-2222568910).
+- Themes can also be toggled in Storybook. See the Storybook section further down.
 
 ## Bundle CSS/JS for production without watch
 - `npm run build:theme --theme=[theme-name]` - See the section further down for details of Parcel's differential bundling.
@@ -86,11 +84,15 @@ STORYBOOK_JS_PATH=build/ui/default/javascript/index.js
 ### Re-ordering stories in sidebar navigation
 - All stories and docs are ordered according to the `storySort` configuration in `ui/.storybook/preview.js`.
 
+### Toggling UI themes in Storybook
+- Use the `storybook-theme-switch-addon` button in the toolbar (paint brush icon).
+- This works in local `DEV MODE` and in the published Storybook.
+- Theme CSS file paths are defined in `.storybook/preview.js`.
+
 ## Trouble-shooting bundling and build issues
 - If bundling breaks, or UI is not updated (in DEV mode) to reflect latest CSS/JS changes:
     - Stop the Parcel Node process with `CTRL+C`.
     - `npm run start:theme --theme=[theme-name]`.
-
 
 ## Build and publish Storybook
 - `npm run publish-storybook` - Runs Parcel build (using the `default` theme) to bundle CSS/JS in the `public` folder, which then gets copied to `storybook-static` folder.
