@@ -12,6 +12,5 @@ for (const [key] of Object.entries(themes)) {
     strNpm += `npm run build:theme --theme=${key} && `;
 }
 
-// strNpm = strNpm.substring(0, strNpm.lastIndexOf('&&') - 1);
-strNpm = 'npm run build:theme --theme=theme1';
+strNpm = strNpm.substring(0, strNpm.lastIndexOf('&&') - 1);
 exec(strNpm);
