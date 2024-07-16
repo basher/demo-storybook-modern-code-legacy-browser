@@ -21,40 +21,46 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.build-publish.outputs.page_url }}
     steps:
-      steps:
-      - id: build-publish
-        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.0
-        with:
-          path: storybook-static
-          build_command: npm run build-storybook
+    - id: build-publish
+      uses: bitovi/github-actions-storybook-to-github-pages@v1.0.0
+      with:
+        path: dist/storybook
+        build_command: npm run build-storybook
 
-      # - name: Checkout
-      #   uses: actions/checkout@v3
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     environment:
+#       name: github-pages
+#       url: ${{ steps.deployment.outputs.page_url }}
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v3
 
-      # - name: Setup Node
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: 20
-      #     # Add dependency caching
-      #     cache: 'npm'
-      #     cache-dependency-path: 'npm-shrinkwrap.json'
+#       - name: Setup Node
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 20
+#           # Add dependency caching
+#           cache: 'npm'
+#           cache-dependency-path: 'npm-shrinkwrap.json'
 
-      # - name: Install and Build
-      #   run: |
-      #     npm run publish-storybook
-      #     cd ${{ github.workspace }}
+#       - name: Install and Build
+#         run: |
+#           npm run publish-storybook
+#           cd ${{ github.workspace }}
 
-      # - name: Upload artifact
-      #   uses: actions/upload-pages-artifact@v3
-      #   with:
-      #     path: ${{ github.workspace }}/storybook-static
+#       - name: Upload artifact
+#         uses: actions/upload-pages-artifact@v3
+#         with:
+#           path: ${{ github.workspace }}/storybook-static
 
-      # - name: Deploy to GitHub Pages
-      #   id: deployment
-      #   uses: actions/deploy-pages@v4
+#       - name: Deploy to GitHub Pages
+#         id: deployment
+#         uses: actions/deploy-pages@v4
