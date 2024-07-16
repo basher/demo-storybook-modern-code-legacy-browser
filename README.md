@@ -77,7 +77,7 @@ STORYBOOK_JS_PATH=build/ui/default/javascript/index.js
 ## Trouble-shooting bundling and build issues
 - If bundling breaks, or UI is not updated (in DEV mode) to reflect latest CSS/JS changes:
     - Stop the Parcel Node process with `CTRL+C`.
-    - `npm run start:theme --theme=[theme-name]`.
+    - `npm start` or `npm run start:theme --theme=[theme-name]`.
 
 ## Storybook/HTML component library
 
