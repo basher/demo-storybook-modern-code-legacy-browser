@@ -54,7 +54,8 @@
         "postcss-logical": "^7.0.1",
         "postcss-sorting": "^8.0.2",
         "sass-export": "^2.1.2",
-        "storybook": "^8.1.7"
+        "storybook": "^8.1.7",
+        "storybook-theme-switch-addon": "^1.0.1--canary.2.19b23d4.0"
     },
     "dependencies": {
         "core-js": "^3.37.1",

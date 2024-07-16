@@ -11,7 +11,6 @@ Instead, make changes to '_index-template.scss', which will then be copied to 'i
 /*
 ----------------------------------------------------------------------------
 THEME import goes before Sass variable declarations, to set new values for CSS custom properties and related Sass variables.
-
 See https://robots.thoughtbot.com/sass-default
 ----------------------------------------------------------------------------
 */
@@ -42,8 +41,6 @@ Atomic.
 /*
 ----------------------------------------------------------------------------
 THEME overrides import goes last to make use of CSS cascade.
-
-Import order will become irrelevant if CSS cascade layers are implemented.
 ----------------------------------------------------------------------------
 */
 @use '_THEMES/theme1/overrides/' as *;
