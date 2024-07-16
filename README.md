@@ -74,6 +74,11 @@ STORYBOOK_JS_PATH=build/ui/default/javascript/index.js
 ### Dev dependencies
 - There is no need for a `.babelrc` file with additional presets (e.g. `@babel/preset-env`) and plugins.
 
+## Trouble-shooting bundling and build issues
+- If bundling breaks, or UI is not updated (in DEV mode) to reflect latest CSS/JS changes:
+    - Stop the Parcel Node process with `CTRL+C`.
+    - `npm run start:theme --theme=[theme-name]`.
+
 ## Storybook/HTML component library
 
 ### Hot module reloading (HMR)
@@ -89,12 +94,7 @@ STORYBOOK_JS_PATH=build/ui/default/javascript/index.js
 - This works in local `DEV MODE` and in the published Storybook.
 - Theme CSS file paths are defined in `.storybook/preview.js`.
 
-## Trouble-shooting bundling and build issues
-- If bundling breaks, or UI is not updated (in DEV mode) to reflect latest CSS/JS changes:
-    - Stop the Parcel Node process with `CTRL+C`.
-    - `npm run start:theme --theme=[theme-name]`.
-
-## Build and publish Storybook
+### Build and publish Storybook
 - `npm run publish-storybook` - Runs Parcel build (using the `default` theme) to bundle CSS/JS in the `public` folder, which then gets copied to `storybook-static` folder.
 - This script also gets run in the Github pages workflow (`.github/static.yml`) to publish Storybook online.
 - `npx http-server ./storybook-static` - Test Storybook production build on local server.
