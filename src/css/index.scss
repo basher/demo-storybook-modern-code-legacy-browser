@@ -14,7 +14,7 @@ THEME import goes before Sass variable declarations, to set new values for CSS c
 See https://robots.thoughtbot.com/sass-default
 ----------------------------------------------------------------------------
 */
-@use '_THEMES/theme1/' as *;
+@use '_THEMES/default/' as *;
 
 /*
 ----------------------------------------------------------------------------
@@ -43,4 +43,4 @@ Atomic.
 THEME overrides import goes last to make use of CSS cascade.
 ----------------------------------------------------------------------------
 */
-@use '_THEMES/theme1/overrides/' as *;
+@use '_THEMES/default/overrides/' as *;

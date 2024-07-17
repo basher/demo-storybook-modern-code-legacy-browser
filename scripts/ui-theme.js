@@ -67,4 +67,5 @@ const readThemeSass = () =>
         });
     });
 
+console.log(`###################### THEMES: ${Object.entries(themes)}`);
 readThemeSass();
