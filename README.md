@@ -18,7 +18,7 @@ Run both the following commands in **separate terminal instances** in order to b
 ### UI themes
 - Theme-specific CSS is located in `src/css/_THEMES` folder.
 - Valid UI theme names are located in `scripts/theme-config.js`.
-- To change the theme in `DEV MODE`, stop the Parcel Node process with `CTRL+C`, and start new theme with `npm run start:theme --theme=[theme-name]`. This uses an NPM config variable in `.nvmrc`. The new theme will work in Storybook.
+- To change the theme in `DEV MODE`, stop the Parcel Node process with `CTRL+C`, and start new theme with `npm run start:theme --theme=[theme-name]`. This uses an NPM config variable in `.npmrc`. The new theme will work in Storybook.
 - Themes can also be toggled in Storybook. See the Storybook section further down.
 
 ## Bundle CSS/JS for production without watch
