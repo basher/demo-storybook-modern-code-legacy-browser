@@ -14,4 +14,6 @@ for (const [key] of Object.entries(themes)) {
 }
 
 strNpm = strNpm.substring(0, strNpm.lastIndexOf('&&') - 1);
-exec(strNpm);
+
+// Console logging 'stdout' shows postbuild script logs.
+exec(strNpm, (error, stdout, stderr) => console.log(`STDOUT: ${stdout}`));
