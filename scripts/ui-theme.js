@@ -42,7 +42,7 @@ const updateFromSassTemplate = (data, whichTheme) =>
             if (whichTheme === undefined) {
                 console.log(
                     colors.red.bold(
-                        `Invalid or null theme - using "default" theme...`
+                        `Invalid or null theme: ${whichTheme}. Using "default" theme instead...`
                     )
                 );
                 theme = 'default';
