@@ -16,17 +16,17 @@
         "bundle-all-themes": "node ./scripts/bundle-all-themes",
         "sass-export-colors": "sass-export src/css/base/_colors.scss -o public/exported-colors.json",
         "prestart": "rm -rf .parcel-cache",
-        "start:theme": "cross-env NODE_ENV=development && npm run ui-theme %npm_config_theme% && npm start",
+        "start:theme": "cross-var cross-env NODE_ENV=development && npm run ui-theme %npm_config_theme% && npm start",
         "start:parcel": "parcel watch src/javascript/index.js --dist-dir public --hmr-port 1234 --target app",
         "start": "npm install && npm run sass-export-colors && npm run start:parcel",
         "prebuild": "rm -rf public/build/ui/%npm_config_theme%",
-        "build:theme": "cross-env NODE_ENV=production && npm run ui-theme %npm_config_theme% && npm run build",
+        "build:theme": "cross-var cross-env NODE_ENV=production && npm run ui-theme %npm_config_theme% && npm run build",
         "build:parcel": "parcel build index.html --dist-dir public/build/ui",
         "build": "npm install && npm run build:parcel",
         "postbuild": "npm run static-assets-rename && npm run static-assets-move %npm_config_theme% && rm -rf public/build/ui/index.runtime.*",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
-        "publish-storybook": "npm install && npm run sass-export-colors && npm run build:theme --theme=theme1 && npm run build-storybook"
+        "publish-storybook": "npm install && npm run sass-export-colors && npm run bundle-all-themes && npm run build-storybook"
     },
     "targets": {
         "app": {}
@@ -47,6 +47,7 @@
         "cheerio": "^1.0.0-rc.11",
         "colors": "^1.4.0",
         "cross-env": "^7.0.3",
+        "cross-var": "^1.1.0",
         "fs-extra": "^10.1.0",
         "parcel": "^2.11.0",
         "postcss": "^8.4.18",
