@@ -14,7 +14,7 @@ export const DisclosureHtml = (args) => `
 
     <div data-content>
         <p>Content to be shown/hidden.</p>
-        <p>Use this component when <code>accordion</code> or <code>tabs</code> components cannot be used.</p>
+        <p>Use this component when <code>accordion</code> component (using HTML <code>&lt;details&gt;&lt;summary&gt;</code>) cannot be used.</p>
     </div>
 </div>
 `;

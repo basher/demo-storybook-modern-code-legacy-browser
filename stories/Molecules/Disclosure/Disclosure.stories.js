@@ -1,20 +1,22 @@
-import { DisclosureHtml } from "./Disclosure";
+import { DisclosureHtml } from './Disclosure';
 
 export default {
-    title: "Molecules/Disclosure",
+    title: 'Molecules/Disclosure',
     parameters: {
         status: {
-            type: "stable",
+            type: 'stable',
         },
     },
     argTypes: {
         bindEscapeKey: {
-            control: "boolean",
-            description: "Close with ESC key.",
+            control: 'boolean',
+            description: 'Close with ESC key.',
+            table: { defaultValue: { summary: false } },
         },
         bindClickOutside: {
-            control: "boolean",
-            description: "Close by clicking outside",
+            control: 'boolean',
+            description: 'Close by clicking outside',
+            table: { defaultValue: { summary: false } },
         },
     },
 };
