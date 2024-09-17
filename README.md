@@ -49,9 +49,6 @@ STORYBOOK_JS_PATH=build/ui/default/javascript/index.js
 
 ## Code authoring guidelines & accessibility
 - All UI components are authored with **semantic HTML5** markup, which is **progressively enhanced** with JavaScript and `WAI-ARIA` as appropriate.
-- The HTML markup uses the `BEM` methodology to provide CSS namespacing.
-- Visual styling is minimal & unopinionated.
-- The CSS is authored with as little code as necessary, making full use of the CSS cascade and inheritance.
 
 ## Linting
 This boilerplate provides lint configurations for both JavaScript and CSS.

@@ -1,16 +1,28 @@
 export default class Disclosure {
-    constructor(disclosure) {
+    private disclosure: Element;
+    private trigger: HTMLButtonElement | null;
+    private content: HTMLElement | null;
+    private bindEscapeKey?: boolean;
+    private bindClickOutside?: boolean;
+
+    constructor(disclosure: Element) {
         this.disclosure = disclosure;
         this.trigger = this.disclosure.querySelector('[data-trigger]');
         this.content = this.disclosure.querySelector('[data-content]');
-        this.bindEscapeKey = this.disclosure.hasAttribute('data-bind-escape-key');
-        this.bindClickOutside = this.disclosure.hasAttribute('data-bind-click-outside');
+        this.bindEscapeKey = this.disclosure.hasAttribute(
+            'data-bind-escape-key',
+        );
+        this.bindClickOutside = this.disclosure.hasAttribute(
+            'data-bind-click-outside',
+        );
 
         this.init();
     }
 
-    static start() {
-        const disclosureComponents = document.querySelectorAll('[data-module="disclosure"]');
+    public static start(): void {
+        const disclosureComponents = document.querySelectorAll(
+            '[data-module="disclosure"]',
+        );
 
         disclosureComponents.forEach((disclosure) => {
             const instance = new Disclosure(disclosure);
@@ -18,25 +30,19 @@ export default class Disclosure {
         });
     }
 
-    init() {
+    private init(): void {
         if (!this.trigger || !this.content) return;
 
         this.setupA11y();
 
-        this.trigger?.addEventListener('click', (e) =>
-            this.handleClick(e),
-        );
+        this.trigger?.addEventListener('click', (e) => this.handleClick(e));
 
         // Handle (global) events which are not part of this component.
-        document.addEventListener('keyup', (e) =>
-            this.handleGlobalKeyup(e),
-        );
-        document.addEventListener('click', (e) =>
-            this.handleGlobalClick(e),
-        );
+        document.addEventListener('keyup', (e) => this.handleGlobalKeyup(e));
+        document.addEventListener('click', (e) => this.handleGlobalClick(e));
     }
 
-    setupA11y() {
+    private setupA11y(): void {
         this.trigger?.removeAttribute('hidden');
         this.trigger?.setAttribute('aria-expanded', 'false');
         this.content?.setAttribute('hidden', '');
@@ -52,7 +58,7 @@ export default class Disclosure {
         }
     }
 
-    randomString(string) {
+    private randomString(string: string): string {
         const random = `${string}-${Math.random()
             .toString(36)
             .substring(2, 15)}`;
@@ -60,7 +66,7 @@ export default class Disclosure {
         return random;
     }
 
-    hideContent(e) {
+    private hideContent(e?: KeyboardEvent): void {
         if (this.trigger?.getAttribute('aria-expanded') === 'true') {
             this.trigger?.setAttribute('aria-expanded', 'false');
             this.content?.setAttribute('hidden', '');
@@ -72,8 +78,8 @@ export default class Disclosure {
         }
     }
 
-    handleClick(e) {
-        const target = e.currentTarget;
+    private handleClick(e: MouseEvent): void {
+        const target = e.currentTarget as HTMLElement;
         const isExpanded =
             target?.getAttribute('aria-expanded') === 'true' || false;
 
@@ -81,15 +87,15 @@ export default class Disclosure {
         this.content?.toggleAttribute('hidden');
     }
 
-    handleGlobalKeyup(e) {
+    private handleGlobalKeyup(e: KeyboardEvent): void {
         if (this.bindEscapeKey && e.code === 'Escape') {
             this.hideContent(e);
         }
     }
 
-    handleGlobalClick(e) {
+    private handleGlobalClick(e: MouseEvent): void {
         if (this.bindClickOutside) {
-            const target = e.target;
+            const target = e.target as HTMLElement;
             const insideButton = this.trigger?.contains(target);
             const insideContent = this.content?.contains(target);
 
