@@ -12,7 +12,10 @@ export default {
             control: 'select',
             options: ['info', 'error'],
             description: 'Message style override.',
-            table: { defaultValue: { summary: 'N/A' } },
+            table: {
+                type: { summary: 'select' },
+                defaultValue: { summary: 'N/A' }
+            },
         }
     },
 };

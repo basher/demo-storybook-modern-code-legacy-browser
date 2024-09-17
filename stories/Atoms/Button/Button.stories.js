@@ -11,13 +11,19 @@ export default {
         label: {
             control: 'text',
             description: 'Button label text.',
-            table: { defaultValue: { summary: 'Any non-empty string' } },
+            table: {
+                type: { summary: 'string' },
+                defaultValue: { summary: 'Non-empty string' }
+            },
         },
         buttonType: {
             control: 'select',
             options: ['primary', 'secondary'],
             description: 'Button style override.',
-            table: { defaultValue: { summary: 'N/A' } },
+            table: {
+                type: { summary: 'select' },
+                defaultValue: { summary: 'N/A' }
+            },
         },
     },
 };

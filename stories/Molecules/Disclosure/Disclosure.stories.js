@@ -11,12 +11,18 @@ export default {
         bindEscapeKey: {
             control: 'boolean',
             description: 'Close with ESC key.',
-            table: { defaultValue: { summary: false } },
+            table: {
+                type: { summary: 'boolean' },
+                defaultValue: { summary: false }
+            },
         },
         bindClickOutside: {
             control: 'boolean',
             description: 'Close by clicking outside',
-            table: { defaultValue: { summary: false } },
+            table: {
+                type: { summary: 'boolean' },
+                defaultValue: { summary: false }
+            },
         },
     },
 };
