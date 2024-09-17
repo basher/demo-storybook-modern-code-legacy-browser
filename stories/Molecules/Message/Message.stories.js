@@ -11,6 +11,8 @@ export default {
         messageType: {
             control: 'select',
             options: ['info', 'error'],
+            description: 'Message style override.',
+            table: { defaultValue: { summary: 'N/A' } },
         }
     },
 };

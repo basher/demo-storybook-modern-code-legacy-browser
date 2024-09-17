@@ -8,10 +8,16 @@ export default {
         },
     },
     argTypes: {
-        label: { control: 'text' },
+        label: {
+            control: 'text',
+            description: 'Button label text.',
+            table: { defaultValue: { summary: 'Any non-empty string' } },
+        },
         buttonType: {
             control: 'select',
             options: ['primary', 'secondary'],
+            description: 'Button style override.',
+            table: { defaultValue: { summary: 'N/A' } },
         },
     },
 };
