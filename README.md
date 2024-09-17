@@ -72,7 +72,7 @@ STORYBOOK_JS_PATH=build/ui/default/javascript/index.js
     - A `tsconfig.json` is needed, even if it's empty. Otherwise, TypeScript errors/warnings are not displayed in the editor.
 
 ### Polyfills
-- A separate `polyfills` bundle is created for browsers that don't support the required features in `src/javascript/config/browser-supports-features.js`.
+- A separate `polyfills` bundle is created for browsers that don't support the required features in `src/javascript/config/browser-supports-features.ts`.
 - For demo purposes, `dialog-polyfill` has been added.
 
 ### Sass
