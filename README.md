@@ -47,6 +47,46 @@ STORYBOOK_CSS_PATH=build/ui/default/css/index.css
 STORYBOOK_JS_PATH=build/ui/default/javascript/index.js
 ```
 
+## Code authoring guidelines & accessibility
+- All UI components are authored with **semantic HTML5** markup, which is **progressively enhanced** with JavaScript and `WAI-ARIA` as appropriate.
+- The HTML markup uses the `BEM` methodology to provide CSS namespacing.
+- Visual styling is minimal & unopinionated.
+- The CSS is authored with as little code as necessary, making full use of the CSS cascade and inheritance.
+
+## Linting
+This boilerplate provides lint configurations for both JavaScript and CSS.
+
+### Linter configuration
+- Install the following VSCode extensions:
+    - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+    - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint).
+    - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
+- Where appropriate, additional NPM packages have been installed according to the `parser`, `extends`, `plugins` and `rules` fields in these configs:
+    - `.eslintrc.js`
+    - `.stylelintrc`
+    - `.prettierrc`
+
+> NOTES:
+> - `Eslint` errors will only be shown in VSCode if you open VSCode from the project root directory, not a parent directory.
+> - In order for `.eslintignore` to work correctly, there's a custom `.vscode/settings.json` in the root directory which defines the correct working directory.
+> - `Postcss` has been installed as a `devDependency`, otherwise `stylelint` throws type errors due to its own postcss dependencies.
+> - The VSCode `stylelint` extension introduced changes that break the `stylelint v14` NPM package. To fix this, the following settings have been added in the custom VSCode `settings.json` file:
+> ```
+> "css.validate": false,
+> "scss.validate": false,
+> "stylelint.enable": true,
+> "stylelint.validate": [
+>     "scss",
+>     "postcss"
+> ]
+> ```
+
+### Git pre-commit hooks
+Configured using `husky` and `lint-staged` to ensure no linting errors are committed to the remote codebase.
+
+> NOTE:
+> Run `npm run prepare` from `ui` directory to install husky shell script. Do this just ONCE after cloning the repo.
+
 ## Supported browsers
 - The [default browserslist configuration](https://github.com/browserslist/browserslist#best-practices) has been extended in `package.json` to support IE11.
 - Run `npx browserslist` to see a list of supported browsers.
