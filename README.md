@@ -144,5 +144,10 @@ Configured using `husky` and `lint-staged` to ensure no linting errors are commi
 - This script also gets run in the Github pages workflow (`.github/static.yml`) to publish Storybook online.
 - `npx http-server ./storybook-static` - Test Storybook production build on local server.
 
+### Publish using GitHub pages
+- Uses the workflow defined in `.github/workflows/static.yml`.
+- Live Storybook URL = https://basher.github.io/demo-storybook-modern-code-legacy-browser/
+
 ## Additional required files in project root directory
+- `.vscode/settings.json` defines the correct working directory for `.eslintignore` and `.stylelintrc`.
 - `.editorconfig` ensures all code uses the same indentation.
