@@ -61,7 +61,15 @@ STORYBOOK_JS_PATH=build/ui/default/javascript/index.js
 
 ### JS transpilation and differential bundling
 - There's no need for a `.babelrc` config. See [Parcel default Babel presets](https://parceljs.org/languages/javascript/#default-presets).
+    - Note that `babel-eslint` has been [deprecated](https://github.com/babel/babel-eslint) in favour of `@babel/eslint-parser`.
+    - `@typescript-eslint/parser` is also needed, due to TypeScript usage.
+    - Parcel leverages the `browserslist` config in `package.json` to determine what level of transpilation to perform.
 - The JS bundles contain non-transpiled `ES6+` code for modern browsers, and transpiled `ES5` code for legacy browsers. See [Parcel differential bundling](https://parceljs.org/features/targets/#differential-bundling).
+
+### TypeScript
+- Parcel [automatically transpiles TypeScript](https://parceljs.org/languages/typescript/).
+    - The `typescript` NPM package is required for `ESLint` and `Prettier` to work together.
+    - A `tsconfig.json` is needed, even if it's empty. Otherwise, TypeScript errors/warnings are not displayed in the editor.
 
 ### Polyfills
 - A separate `polyfills` bundle is created for browsers that don't support the required features in `src/javascript/config/browser-supports-features.js`.
@@ -101,8 +109,3 @@ STORYBOOK_JS_PATH=build/ui/default/javascript/index.js
 
 ## Additional required files in project root directory
 - `.editorconfig` ensures all code uses the same indentation.
-
-## Out of scope
-- No TypeScript.
-- No Stylelint, Eslint, Prettier.
-- No Git commit hooks (Husky).
