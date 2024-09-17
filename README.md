@@ -141,7 +141,6 @@ Configured using `husky` and `lint-staged` to ensure no linting errors are commi
 
 ### Build and publish Storybook
 - `npm run publish-storybook` - Runs Parcel build (using the `default` theme) to bundle CSS/JS in the `public` folder, which then gets copied to `storybook-static` folder.
-- This script also gets run in the Github pages workflow (`.github/static.yml`) to publish Storybook online.
 - `npx http-server ./storybook-static` - Test Storybook production build on local server.
 
 ### Publish using GitHub pages
