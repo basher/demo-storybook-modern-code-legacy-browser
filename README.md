@@ -150,3 +150,5 @@ Configured using `husky` and `lint-staged` to ensure no linting errors are commi
 ## Additional required files in project root directory
 - `.vscode/settings.json` defines the correct working directory for `.eslintignore` and `.stylelintrc`.
 - `.editorconfig` ensures all code uses the same indentation.
+
+## TODO
